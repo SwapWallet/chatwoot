@@ -23,6 +23,7 @@ const startConversation = () => {
     });
   }
 };
+
 </script>
 
 <template>
@@ -43,7 +44,7 @@ const startConversation = () => {
             : $t('START_CONVERSATION')
         }}
       </span>
-      <i class="i-lucide-chevron-right size-5 mt-px" />
+      <i class="i-lucide-chevron-right rtl:i-lucide-chevron-left size-5 mt-px" />
     </button>
   </div>
 </template>
