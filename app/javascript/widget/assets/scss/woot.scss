@@ -2,12 +2,25 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+@import 'shared/assets/fonts/yekanIran';
 @import 'shared/assets/fonts/widget_fonts';
 @import 'views/conversation';
 
 html,
 body {
   @apply antialiased h-full;
+  font-family:
+    'IRANYekanX',
+    'Inter',
+    -apple-system,
+    system-ui,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    'Helvetica Neue',
+    Tahoma,
+    Arial,
+    sans-serif;
 }
 
 .is-mobile {
@@ -167,6 +180,10 @@ blockquote {
 @layer base {
   // NEXT COLORS START
   :root {
+    --safe-area-inset-top: max(env(safe-area-inset-top), var(--webview-inset-top, 0px));
+    --safe-area-inset-right: max(env(safe-area-inset-right), var(--webview-inset-right, 0px));
+    --safe-area-inset-bottom: max(env(safe-area-inset-bottom), var(--webview-inset-bottom, 0px));
+    --safe-area-inset-left: max(env(safe-area-inset-left), var(--webview-inset-left, 0px));
     // slate
     --slate-1: 252 252 253;
     --slate-2: 249 249 251;
