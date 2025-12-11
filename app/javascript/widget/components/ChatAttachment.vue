@@ -19,6 +19,10 @@ export default {
       type: Function,
       default: () => {},
     },
+    allowedFileTypes: {
+      type: String,
+      default: ALLOWED_FILE_TYPES,
+    },
   },
   data() {
     return { isUploading: false };
@@ -33,8 +37,8 @@ export default {
         this.globalConfig.maximumFileUploadSize
       );
     },
-    allowedFileTypes() {
-      return ALLOWED_FILE_TYPES;
+    isImageOnly() {
+      return this.allowedFileTypes === 'image/*';
     },
   },
   mounted() {
@@ -55,14 +59,25 @@ export default {
         if (item.kind === 'file') {
           e.preventDefault();
           const file = item.getAsFile();
+          if (this.isImageOnly && !file.type.startsWith('image/')) {
+            return;
+          }
           this.$refs.upload.add(file);
         }
       });
+    },
+    isAllowedFileType(file) {
+      if (!this.isImageOnly) return true;
+      const fileType = file?.type || file?.file?.type || '';
+      return fileType.startsWith('image/');
     },
     getFileType(fileType) {
       return fileType.includes('image') ? 'image' : 'file';
     },
     async onFileUpload(file) {
+      if (!this.isAllowedFileType(file)) {
+        return;
+      }
       if (this.globalConfig.directUploadsEnabled) {
         await this.onDirectFileUpload(file);
       } else {

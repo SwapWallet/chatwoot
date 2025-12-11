@@ -5,6 +5,7 @@
 
 @import 'shared/assets/fonts/InterDisplay/inter-display';
 @import 'shared/assets/fonts/inter';
+@import 'shared/assets/fonts/yekanIran';
 
 // Next Colors
 @import 'next-colors';
@@ -19,6 +20,7 @@
 html,
 body {
   font-family:
+    IRANYekanX,
     'Inter',
     -apple-system,
     system-ui,
@@ -33,7 +35,7 @@ body {
   -webkit-font-smoothing: antialiased;
   height: 100%;
   margin: 0;
-  padding: 0;
+  padding: var(--safe-area-inset-top) var(--safe-area-inset-right) var(--safe-area-inset-bottom) var(--safe-area-inset-left);
   width: 100%;
 }
 

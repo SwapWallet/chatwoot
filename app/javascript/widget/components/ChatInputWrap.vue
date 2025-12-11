@@ -122,7 +122,7 @@ export default {
 
 <template>
   <div
-    class="items-center flex ltr:pl-3 rtl:pr-3 ltr:pr-2 rtl:pl-2 rounded-[7px] transition-all duration-200 bg-n-background !shadow-[0_0_0_1px,0_0_2px_3px]"
+    class="items-center rtl:flex-row-reverse flex rounded-[7px] transition-all duration-200 bg-n-background !shadow-[0_0_0_1px,0_0_2px_3px]"
     :class="{
       '!shadow-n-brand dark:!shadow-n-brand': isFocused,
       '!shadow-n-strong dark:!shadow-n-strong': !isFocused,
@@ -142,11 +142,17 @@ export default {
       @focus="onFocus"
       @blur="onBlur"
     />
-    <div class="flex items-center ltr:pl-2 rtl:pr-2">
+    <div class="flex items-center ltr:pl-2 rtl:pr-2 ">
       <ChatAttachmentButton
         v-if="showAttachment"
         class="text-n-slate-12"
         :on-attach="onSendAttachment"
+        allowed-file-types="image/*"
+      />
+      <ChatSendButton
+        v-if="showSendButton"
+        :color="widgetColor"
+        @click="handleButtonClick"
       />
       <button
         v-if="shouldShowEmojiPicker && hasEmojiPickerEnabled"
@@ -169,11 +175,7 @@ export default {
         :on-click="emojiOnClick"
         @keydown.esc="hideEmojiPicker"
       />
-      <ChatSendButton
-        v-if="showSendButton"
-        :color="widgetColor"
-        @click="handleButtonClick"
-      />
+
     </div>
   </div>
 </template>
