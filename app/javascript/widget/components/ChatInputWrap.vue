@@ -142,7 +142,7 @@ export default {
       @focus="onFocus"
       @blur="onBlur"
     />
-    <div class="flex items-center ltr:pl-2 rtl:pr-2 ">
+    <div class="flex items-center ltr:pl-2 rtl:pr-2">
       <ChatAttachmentButton
         v-if="showAttachment"
         class="text-n-slate-12"
@@ -175,7 +175,6 @@ export default {
         :on-click="emojiOnClick"
         @keydown.esc="hideEmojiPicker"
       />
-
     </div>
   </div>
 </template>
@@ -186,6 +185,6 @@ export default {
 }
 
 .user-message-input {
-  @apply border-none outline-none w-full placeholder:text-n-slate-10 resize-none h-8 min-h-8 max-h-60 py-1 px-0 my-2 bg-n-background text-n-slate-12 transition-all duration-200;
+  @apply border-none text-[14px] outline-none w-full placeholder:text-n-slate-10 resize-none h-8 min-h-8 max-h-60 py-1 px-0 my-2 bg-n-background text-n-slate-12 transition-all duration-200;
 }
 </style>

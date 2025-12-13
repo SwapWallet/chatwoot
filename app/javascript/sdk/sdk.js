@@ -103,7 +103,7 @@ export const SDK_CSS = `
   color: #fff;
   display: flex;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, Arial, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   justify-content: center;
   padding-right: 20px;
@@ -245,6 +245,7 @@ export const SDK_CSS = `
     right: 0;
     top: 0;
     width: 100%;
+    padding: var(--safe-area-inset-top) var(--safe-area-inset-right) var(--safe-area-inset-bottom) var(--safe-area-inset-left); !important;
  }
 
  .woot-widget-holder iframe {
@@ -259,7 +260,7 @@ export const SDK_CSS = `
     bottom: 0;
     top: auto;
     max-height: 100vh;
-    padding: 0 8px;
+    padding: var(--safe-area-inset-top) var(--safe-area-inset-right) var(--safe-area-inset-bottom) var(--safe-area-inset-left); !important;
   }
 
   .woot-widget-holder.has-unread-view iframe {

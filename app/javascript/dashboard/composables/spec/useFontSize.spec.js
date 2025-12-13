@@ -16,7 +16,7 @@ global.requestAnimationFrame = vi.fn(cb => cb());
 
 describe('useFontSize', () => {
   const mockUISettings = ref({
-    font_size: '16px',
+    font_size: '14px',
   });
   const mockUpdateUISettings = vi.fn().mockResolvedValue(undefined);
   const mockTranslate = vi.fn(key => key);

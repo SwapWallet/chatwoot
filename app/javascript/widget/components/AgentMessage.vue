@@ -179,7 +179,7 @@ export default {
         <div v-if="hasReplyTo" class="flex mt-2 mb-1 text-xs">
           <ReplyToChip :reply-to="replyTo" />
         </div>
-        <div class="flex w-full gap-1">
+        <div class="flex w-full gap-1 rtl:flex-row-reverse">
           <div
             class="space-y-2"
             :class="{

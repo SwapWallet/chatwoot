@@ -105,7 +105,7 @@ export default {
 
 <template>
   <div class="user-message-wrap group">
-    <div class="flex gap-1 user-message">
+    <div class="flex gap-1 user-message mr-2">
       <div
         class="message-wrap"
         :class="{ 'in-progress': isInProgress, 'is-failed': isFailed }"
@@ -113,7 +113,7 @@ export default {
         <div v-if="hasReplyTo" class="flex justify-end mt-2 mb-1 text-xs">
           <ReplyToChip :reply-to="replyTo" />
         </div>
-        <div class="flex justify-end gap-1">
+        <div class="flex justify-end gap-1 rtl:flex-row-reverse">
           <div class="flex flex-col justify-end">
             <MessageReplyButton
               v-if="!isInProgress && !isFailed"
