@@ -64,7 +64,10 @@ const headerText = computed(() =>
 <template>
   <div class="flex items-center justify-between gap-2">
     <div class="flex flex-col gap-1">
-      <div v-if="showHeader" class="font-medium text-n-slate-12">
+      <div
+        v-if="showHeader"
+        class="font-medium text-n-slate-12 text-sm whitespace-pre-wrap mb-0.5"
+      >
         {{ headerText }}
       </div>
 
@@ -78,7 +81,7 @@ const headerText = computed(() =>
         :is-online="isOnline"
         :is-in-working-hours="isInWorkingHours"
         :class="textClasses"
-        class="text-n-slate-11"
+        class="text-n-slate-11 text-xs"
       />
     </div>
 
