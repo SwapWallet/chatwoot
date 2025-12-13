@@ -16,7 +16,7 @@ on:
   workflow_dispatch:
 
 env:
-  DOCKER_REPO: chatwoot/chatwoot
+  DOCKER_REPO: sadeghhayeri/chatwoot
 
 jobs:
   build:
@@ -120,7 +120,7 @@ jobs:
           else
             TAG="${DOCKER_REPO}:${SANITIZED_REF}"
           fi
-          
+
           docker buildx imagetools create -t $TAG \
             $(printf '${{ env.DOCKER_REPO }}@sha256:%s ' *)
 
@@ -134,5 +134,5 @@ jobs:
           else
             TAG="${DOCKER_REPO}:${SANITIZED_REF}"
           fi
-          
+
           docker buildx imagetools inspect $TAG
