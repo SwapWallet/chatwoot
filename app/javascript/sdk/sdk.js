@@ -2,6 +2,10 @@ export const SDK_CSS = `
 :root {
   --b-100: #F2F3F7;
   --s-700: #37546D;
+  --safe-area-inset-top: max(env(safe-area-inset-top), var(--webview-inset-top, 0px));
+  --safe-area-inset-right: max(env(safe-area-inset-right), var(--webview-inset-right, 0px));
+  --safe-area-inset-bottom: max(env(safe-area-inset-bottom), var(--webview-inset-bottom, 0px));
+  --safe-area-inset-left: max(env(safe-area-inset-left), var(--webview-inset-left, 0px));
 }
 
 .woot-widget-holder {
@@ -13,6 +17,7 @@ export const SDK_CSS = `
   position: fixed !important;
   transition: opacity 0.2s linear, transform 0.25s linear;
   z-index: 2147483000 !important;
+  padding: var(--safe-area-inset-top) var(--safe-area-inset-right) var(--safe-area-inset-bottom) var(--safe-area-inset-left) !important;
 }
 
 .woot-widget-holder.woot-widget-holder--flat {
@@ -245,7 +250,7 @@ export const SDK_CSS = `
     right: 0;
     top: 0;
     width: 100%;
-    padding: var(--safe-area-inset-top) var(--safe-area-inset-right) var(--safe-area-inset-bottom) var(--safe-area-inset-left); !important;
+    padding: var(--safe-area-inset-top) var(--safe-area-inset-right) var(--safe-area-inset-bottom) var(--safe-area-inset-left) !important;
  }
 
  .woot-widget-holder iframe {
@@ -260,7 +265,7 @@ export const SDK_CSS = `
     bottom: 0;
     top: auto;
     max-height: 100vh;
-    padding: var(--safe-area-inset-top) var(--safe-area-inset-right) var(--safe-area-inset-bottom) var(--safe-area-inset-left); !important;
+    padding: var(--safe-area-inset-top) var(--safe-area-inset-right) var(--safe-area-inset-bottom) var(--safe-area-inset-left) !important;
   }
 
   .woot-widget-holder.has-unread-view iframe {
