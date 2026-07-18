@@ -29,7 +29,7 @@ const onBackButtonClick = () => {
     <div class="flex items-center">
       <button
         v-if="showBackButton"
-        class="px-2 ltr:-ml-3 rtl:-mr-3"
+        class="px-2 ltr:-ml-3 rtl:-mr-3 rtl:rotate-180"
         @click="onBackButtonClick"
       >
         <FluentIcon icon="chevron-left" size="24" class="text-n-slate-12" />

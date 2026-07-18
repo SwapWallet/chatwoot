@@ -12,11 +12,11 @@ on:
       - develop
       - master
     tags:
-      - v*
+      - sw-v*
   workflow_dispatch:
 
 env:
-  DOCKER_REPO: chatwoot/chatwoot
+  DOCKER_REPO: sadeghhayeri/chatwoot
 
 permissions:
   contents: read
@@ -29,8 +29,6 @@ jobs:
         include:
           - platform: linux/amd64
             runner: ubuntu-latest
-          - platform: linux/arm64
-            runner: ubuntu-22.04-arm
     runs-on: ${{ matrix.runner }}
     env:
       GIT_REF: ${{ github.head_ref || github.ref_name }}
@@ -125,7 +123,7 @@ jobs:
           else
             TAG="${DOCKER_REPO}:${SANITIZED_REF}"
           fi
-          
+
           docker buildx imagetools create -t $TAG \
             $(printf '${{ env.DOCKER_REPO }}@sha256:%s ' *)
 
@@ -139,5 +137,5 @@ jobs:
           else
             TAG="${DOCKER_REPO}:${SANITIZED_REF}"
           fi
-          
+
           docker buildx imagetools inspect $TAG
