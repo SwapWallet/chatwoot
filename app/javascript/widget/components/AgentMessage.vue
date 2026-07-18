@@ -184,10 +184,10 @@ export default {
         </div>
       </div>
       <div class="message-wrap">
-        <div v-if="hasReplyTo" class="flex mt-2 mb-1 text-xs">
+        <div v-if="hasReplyTo" class="flex rtl:justify-end mt-2 mb-1 text-xs">
           <ReplyToChip :reply-to="replyTo" />
         </div>
-        <div class="flex w-full gap-1">
+        <div class="flex rtl:flex-row-reverse w-full gap-1">
           <div
             class="space-y-2"
             :class="{

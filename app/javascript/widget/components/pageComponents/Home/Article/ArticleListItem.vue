@@ -27,6 +27,8 @@ const onClick = () => {
     >
       {{ title }}
     </button>
-    <span class="i-lucide-chevron-right text-base shrink-0" />
+    <span
+      class="i-lucide-chevron-right rtl:i-lucide-chevron-left text-base shrink-0"
+    />
   </div>
 </template>

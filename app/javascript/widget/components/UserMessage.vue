@@ -110,10 +110,13 @@ export default {
         class="message-wrap"
         :class="{ 'in-progress': isInProgress, 'is-failed': isFailed }"
       >
-        <div v-if="hasReplyTo" class="flex justify-end mt-2 mb-1 text-xs">
+        <div
+          v-if="hasReplyTo"
+          class="flex justify-end rtl:justify-start mt-2 mb-1 text-xs"
+        >
           <ReplyToChip :reply-to="replyTo" />
         </div>
-        <div class="flex justify-end gap-1">
+        <div class="flex rtl:flex-row-reverse justify-end gap-1">
           <div class="flex flex-col justify-end">
             <MessageReplyButton
               v-if="!isInProgress && !isFailed"
