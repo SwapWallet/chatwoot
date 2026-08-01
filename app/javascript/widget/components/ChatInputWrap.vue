@@ -134,7 +134,7 @@ export default {
 
 <template>
   <div
-    class="items-center rtl:flex-row-reverse flex rounded-[7px] transition-all duration-200 bg-n-background !shadow-[0_0_0_1px,0_0_2px_3px]"
+    class="items-center rtl:flex-row-reverse flex pl-3 pr-2 rounded-[7px] transition-all duration-200 bg-n-background !shadow-[0_0_0_1px,0_0_2px_3px]"
     :class="{
       '!shadow-[var(--widget-color,#2781f6)]': isFocused,
       '!shadow-n-strong dark:!shadow-n-strong': !isFocused,
@@ -154,7 +154,7 @@ export default {
       @focus="onFocus"
       @blur="onBlur"
     />
-    <div class="relative flex items-center ltr:pl-2 rtl:pr-2">
+    <div class="relative flex items-center rtl:flex-row-reverse pl-2">
       <ChatAttachmentButton
         v-if="showAttachment"
         class="text-n-slate-12"
@@ -184,11 +184,10 @@ export default {
       <EmojiPicker
         v-if="shouldShowEmojiPicker && showEmojiPicker"
         v-on-clickaway="hideEmojiPicker"
-        class="!bottom-full end-0 mb-2 max-w-[calc(100vw-3rem)]"
+        class="!bottom-full right-0 mb-2 max-w-[calc(100vw-3rem)]"
         @select="onSelectEmoji"
         @keydown.esc="hideEmojiPicker"
       />
-
     </div>
   </div>
 </template>
