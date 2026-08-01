@@ -128,7 +128,7 @@ export default {
 
 <template>
   <div
-    class="items-center rtl:flex-row-reverse flex rounded-[7px] transition-all duration-200 bg-n-background !shadow-[0_0_0_1px,0_0_2px_3px]"
+    class="items-center rtl:flex-row-reverse flex pl-3 pr-2 rounded-[7px] transition-all duration-200 bg-n-background !shadow-[0_0_0_1px,0_0_2px_3px]"
     :class="{
       '!shadow-[var(--widget-color,#2781f6)]': isFocused,
       '!shadow-n-strong dark:!shadow-n-strong': !isFocused,
@@ -148,7 +148,7 @@ export default {
       @focus="onFocus"
       @blur="onBlur"
     />
-    <div class="flex items-center ltr:pl-2 rtl:pr-2 ">
+    <div class="flex items-center rtl:flex-row-reverse pl-2">
       <ChatAttachmentButton
         v-if="showAttachment"
         class="text-n-slate-12"
@@ -181,14 +181,15 @@ export default {
         :on-click="emojiOnClick"
         @keydown.esc="hideEmojiPicker"
       />
-
     </div>
   </div>
 </template>
 
 <style scoped lang="scss">
+// The action buttons stay on the right in both directions (see rtl:flex-row-reverse
+// above), so the picker and its caret stay right-anchored too.
 .emoji-dialog {
-  @apply max-w-full ltr:right-5 rtl:right-[unset] rtl:left-5 -top-[302px] before:ltr:right-2.5 before:rtl:right-[unset] before:rtl:left-2.5;
+  @apply max-w-[calc(100%-2.5rem)] right-5 -top-[302px] before:right-2.5;
 }
 
 .user-message-input {
