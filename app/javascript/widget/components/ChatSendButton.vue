@@ -30,7 +30,12 @@ export default {
     :disabled="disabled"
     class="min-h-8 min-w-8 flex items-center justify-center"
   >
-    <FluentIcon v-if="!loading" icon="send" :style="`color: ${color}`" />
+    <FluentIcon
+      v-if="!loading"
+      icon="send"
+      class="rtl:-scale-x-100"
+      :style="`color: ${color}`"
+    />
     <Spinner v-else size="small" />
   </button>
 </template>
